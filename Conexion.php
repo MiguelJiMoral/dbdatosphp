@@ -6,17 +6,17 @@
         private $host="localhost";
         private $db="dbdatosphp";
         private $user="root";
-        private $pass="";
+        private $pass="Root";
         private $conectar;
 
-        public function ___construct(){
+        public function __construct(){
             $cadenadeconexion = "mysql:host=".$this->host.";dbname=".$this->db."; charset=utf8";
             
             try{
                 
                 $this->conectar = new PDO($cadenadeconexion,$this->user, $this ->pass);
-                $this -> conectar -> setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo  "Conexion Exitosa";
+                $this -> conectar -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               
             } catch(Exception $e){
                 $this -> conectar="Error de Conexion";
                 echo "Error: ".$e->getMessage();

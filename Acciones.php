@@ -4,7 +4,7 @@ require_once("AutoLoad.php");
         private $conexion;
 
 
-        public function ___construct(){
+        public function __construct(){
             $this -> conexion = new Conexion();
             $this -> conexion = @$this -> conexion -> AbrirConexion();
         }
