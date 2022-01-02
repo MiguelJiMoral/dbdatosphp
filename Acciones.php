@@ -18,5 +18,39 @@ require_once("AutoLoad.php");
             $resultado = $consulta -> execute();
             return $resultado;
         }
+        public function Actualizar(int $id,String $nombre, int $edad, String $correo){
+            $sql= "update Datos set nombre = :nombre, edad = :edad, correo = :correo where id = :id";
+            $consulta = @$this ->conexion-> prepare($sql);
+            $consulta -> BindValue(":nombre", $nombre);
+            $consulta -> BindValue(":edad", $edad);
+            $consulta -> BindValue(":correo", $correo);
+            $consulta -> BindValue(":id", $id);
+            $consulta -> execute();
+            $resultado = $consulta -> rowCount();
+            return $resultado;
+        }
+        public function Eliminar(int $id){
+            $sql= "delete from Datos where id = :id";
+            $consulta = @$this ->conexion-> prepare($sql);
+            $consulta -> BindValue(":id", $id);
+            $consulta -> execute();
+            $resultado = $consulta -> rowCount();
+            return $resultado;
+        }
+        public function Consulta(){
+            $sql= "select * from Datos";
+            $consulta = @$this ->conexion-> prepare($sql);
+            $consulta -> execute();
+            $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+        public function Consultaid(int $id){
+            $sql= "select * from Datos where id = :id";
+            $consulta = @$this ->conexion-> prepare($sql);
+            $consulta -> BindValue("id", $id);
+            $consulta -> execute();
+            $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
     }
 ?>
