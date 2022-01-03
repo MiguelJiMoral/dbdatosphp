@@ -47,7 +47,7 @@ require_once("AutoLoad.php");
         public function Consultaid(int $id){
             $sql= "select * from Datos where id = :id";
             $consulta = @$this ->conexion-> prepare($sql);
-            $consulta -> BindValue("id", $id);
+            $consulta -> BindValue(":id", $id);
             $consulta -> execute();
             $resultado = $consulta -> fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
