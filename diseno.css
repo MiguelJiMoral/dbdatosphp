@@ -1,0 +1,10 @@
+body{
+    background-color: rgb(233, 233, 109);
+}
+table{
+    background-color: white;
+    border: black;
+    translate: center;
+    position: relative;
+    left: 25%;
+}

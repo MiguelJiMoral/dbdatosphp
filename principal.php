@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="diseno.css">
     <title> Pagina Principal </title>
 </head>
 
@@ -32,13 +33,13 @@
                   echo"<td>". $valor["edad"]."</td>";
                   echo"<td>". $valor["correo"]."</td>";
 
-                  echo"<td><form action='elimina.php' method='post'>
-                  <input type='hidden' name='id' value='".$valor["id"]."'>
-                  <input type='submit' name='Actualizar' value='Editar'></td>";
-
                   echo"<td><form action='actualizar.php' method='post'>
                   <input type='hidden' name='id' value='".$valor["id"]."'>
-                  <input type='submit' name='Eliminar' value='Eliminar'></td>";
+                  <input type='submit' name='Actualizar' value='Editar'></form></td>";
+
+                  echo"<td><form action='elimina.php' method='post'>
+                  <input type='hidden' name='id' value='".$valor["id"]."'>
+                  <input type='submit' name='Eliminar' value='Eliminar'></form></td>";
                   echo"</tr>";
               }
             ?>
